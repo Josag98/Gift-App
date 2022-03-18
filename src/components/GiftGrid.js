@@ -1,15 +1,12 @@
-import React, { useEffect,useState } from 'react'
-import { getGifts } from '../helpers/getGifts';
+import React from 'react'
+import { useFetchGifts } from '../hooks/useFetchGifts';
+// import { getGifts } from '../helpers/getGifts';
 import {GiftGridItem} from './GiftGridItem';
 
 export const GiftGrid = ({category}) => {
-  const [images, setImages] = useState([]);
+ 
 
-  
-
-  useEffect(() => {
-    getGifts(category).then(imgs => setImages(imgs))
-  }, [category]);
+  const {data:images,loading}= useFetchGifts(category)
 
   return (
     <>
