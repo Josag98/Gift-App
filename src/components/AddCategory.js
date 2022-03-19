@@ -25,6 +25,7 @@ export const AddCategory = ({setCategories}) => {
 
   return (
       <form onSubmit={handleSubmit}>
+          <p>{inputValue}</p>
     <input
     placeholder='¿Que gift desea buscar?'
     type="text"
